@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // § Data 1: [17, 21, 23]
+        // § Data 2: [12, 5, -5, 0, 4]
+        var data1 = [17, 21, 23];
+        var data2 = [12, 5, -5, 0, 4];
+        const printForecast = function (arr) {
+            var mess = arr.map((item, index) => `... ${item}oC in ${index + 1} days`)
+                        .join('');
+            console.log(mess);
+        }
+        console.log('Data 1: [17, 21, 23]')
+        printForecast(data1);
+        console.log('\nData 2: [12, 5, -5, 0, 4]')
+        printForecast(data2);
+    </script>
+</body>
+
+</html>

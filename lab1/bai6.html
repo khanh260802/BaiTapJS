@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+       function calcTip(billValue) {
+            var tipValue = billValue <= 300 && billValue >= 50 ?
+                billValue * 0.15 :
+                billValue * 0.2;
+            // console.log(`The bill was ${billValue}, the tip was ${tipValue}, and the total value ${billValue+tipValue}`);
+            return tipValue;
+        } 
+
+        var bills = [125, 555, 44]; 
+        var tips = bills.map(calcTip) 
+        var total = bills.map( (money)=> money+calcTip(money) )
+        
+        console.log('bills ', bills)
+        console.log('tips ', tips)
+        console.log('total ', total)
+
+    </script>
+</body>
+
+</html>
