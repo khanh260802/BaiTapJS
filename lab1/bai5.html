@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function calcAverage(scores) { 
+            var sum = scores.reduce((acc, val) => acc+val, 0); 
+            return (sum/scores.length).toFixed(2); 
+        }
+
+        function checkWinner(avgDolphins, avgKoalas) { 
+            if( Math.min(avgDolphins, avgKoalas)*2 > Math.max(avgDolphins, avgKoalas) ) {
+                console.log('No team win'); 
+            } else if( avgDolphins > avgKoalas ) { 
+                console.log(`Dolphins win (${avgDolphins} vs ${avgKoalas})`); 
+            } else { 
+                console.log(`Koalas win (${avgKoalas} vs ${avgDolphins})`); 
+            }
+        }
+
+        console.log('Data 1: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110');
+        var avgDolphins1 = calcAverage([44, 23, 71]);
+        var avgKoalas1 = calcAverage([65, 54, 49]);
+        checkWinner(avgDolphins1, avgKoalas1)
+
+        console.log('\nData 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123');
+        var avgDolphins1 = calcAverage([85, 54, 41]);
+        var avgKoalas1 = calcAverage([23, 34, 27]);
+        checkWinner(avgDolphins1, avgKoalas1)
+    </script>
+</body>
+
+</html>
