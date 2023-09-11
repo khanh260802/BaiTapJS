@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function calculator(DolphinsScore, KoalasScore) {
+            DolphinsScoreAvg = DolphinsScore.reduce((acc, score) => {
+                return acc + score/DolphinsScore.length; 
+            }, 0).toFixed(2); 
+            KoalasScoreAvg = KoalasScore.reduce((acc, score) => {
+                return acc + score/KoalasScore.length;
+            }, 0).toFixed(2); 
+
+            if( Math.max(DolphinsScoreAvg, KoalasScoreAvg) < 100 ) {
+                console.log('No team wins the trophy'); 
+            } else if(DolphinsScore-KoalasScoreAvg > 0.0001){ 
+                console.log(`DolphinsScore win the trophy (${DolphinsScoreAvg}), KoalasScore (${KoalasScoreAvg})`);
+            } else if( KoalasScore-DolphinsScore > 0.0001 ) { 
+                console.log(`KoalasScore win the trophy (${KoalasScoreAvg}), DolphinsScore (${DolphinsScoreAvg})`);
+            } else {
+                console.log(`draw the trophy (${DolphinsScoreAvg})`);
+            }
+        }
+
+        console.log('Data 1: Dolphins score 96, 108 and 89. Koalas score 88, 91 and 110');
+        calculator([96, 108, 89], [88, 91, 110]);
+
+        console.log('\nData 2: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 123');
+        calculator([97, 112, 101], [109, 95, 123]);
+
+        console.log('\nData 3: Dolphins score 97, 112 and 101. Koalas score 109, 95 and 106');
+        calculator([97, 112, 101], [109, 95, 106]);
+
+    </script>
+</body>
+
+</html>
