@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        var Marks = {
+            weights: 78,
+            height: 1.69
+        }
+
+        var John = {
+            weights: 78,
+            height: 1.69
+        }
+
+        function caculateBMI({weights, height}) {
+            return (weights / (height * height)).toFixed(2);
+        }
+
+        Marks.BMI = caculateBMI(Marks);
+        John.BMI = caculateBMI(John); 
+        var markHigerBMI = Marks.BMI > John.BMI;  
+
+        if( markHigerBMI ) { 
+            console.log(`Mark's BMI(${Marks.BMI}) is higher than John's(${John.BMI})`);
+        } else {
+            console.log(`John's BMI(${John.BMI}) is higher than Mark's(${Marks.BMI})`);
+        }
+    </script>
+</body>
+
+</html>
