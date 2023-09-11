@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function solveTip(billValue) {
+            var tipValue = billValue <= 300 && billValue >= 50 ?
+                billValue * 0.15 :
+                billValue * 0.2;
+            console.log(`The bill was ${billValue}, the tip was ${tipValue}, and the total value ${billValue+tipValue}`);
+            return tipValue;
+        }
+        
+        console.log('Data 1: Test for bill values 270, 40 and 430'); 
+        solveTip(270); 
+        solveTip(40); 
+        solveTip(430); 
+    </script>
+</body>
+
+</html>
