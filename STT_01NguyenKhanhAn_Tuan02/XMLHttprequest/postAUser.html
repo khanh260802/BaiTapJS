@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var url = 'https://6507c75456db83a34d9b5280.mockapi.io/api/v1/users';
+        var data = {}; 
+        data.FirstName = 'Nguyen 2'; 
+        data.LastName = 'Khanh';
+        var json = JSON.stringify(data) ; 
+        
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', url, true);    
+        xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+        xhr.onload = function() { 
+            var users = JSON.parse(xhr.responseText); 
+            if( xhr.readyState == 4 && xhr.status == '201' ) 
+                console.table(users); 
+            else 
+                console.error(users); 
+        }
+        xhr.send(json);
+
+    </script>
+</body>
+</html>
