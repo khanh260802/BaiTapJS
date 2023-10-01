@@ -18,8 +18,7 @@ const FirstScreen = () => {
                 grow your business
             </Text>
             <Text style={styles.description}>
-                {" "}
-                We will help yout to grow your business using online server{" "}
+                We will help yout to grow your business using online server
             </Text>
             <Button
                 type="solid"
