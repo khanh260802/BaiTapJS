@@ -49,7 +49,7 @@ PASSWORD`}</Text>
 
 const styles = StyleSheet.create({
     aPosition: {
-        // left:12+0,
+        // left: 0,
         // top: 0,
         // overflow: "hidden",
         // position: "absolute",
@@ -74,19 +74,19 @@ const styles = StyleSheet.create({
     frameChildPosition: {
         top: 383,
         height: 45,
-        left:12+30,
+        left: 30,
         position: "absolute",
     },
     forgetPassword: {
         top: 230,
-        left:12+113,
+        left: 113,
         fontSize: FontSize.size_6xl,
     },
     provideYourAccounts: {
         top: 320,
         width: 302,
         height: 53,
-        left:12+30,
+        left: 30,
         fontSize: FontSize.size_mini,
         fontFamily: FontFamily.robotoBold,
         fontWeight: "700",
@@ -96,17 +96,17 @@ const styles = StyleSheet.create({
         backgroundColor: Color.colorGold,
         height: 45,
         width: 305,
-        left:12+30,
+        left: 30,
         position: "absolute",
     },
     next: {
         top: 483,
-        left:12+160,
+        left: 160,
         fontSize: FontSize.size_lg,
     },
     lock1528791Icon: {
         top: 76,
-        left:12+128,
+        left: 128,
         width: 105,
         height: 117,
         position: "absolute",
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
     },
     email: {
         top: 396,
-        left:12+78,
+        left: 78,
         fontFamily: FontFamily.robotoRegular,
     },
     mail29353651Icon: {

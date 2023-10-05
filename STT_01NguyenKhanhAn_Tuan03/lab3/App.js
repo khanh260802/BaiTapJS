@@ -14,14 +14,14 @@ export default function App() {
   return (
     <View style={styles.container}>
       
-      <FirstScreen />
+      {/* <FirstScreen /> */}
       {/* <A /> */}
       {/* <B /> */}
       {/* <C /> */}
       {/* <D /> */}
       {/* <E /> */}
       {/* <A2 /> */}
-      {/* <XMEye /> */}
+      <XMEye />
     </View>
   );
 }

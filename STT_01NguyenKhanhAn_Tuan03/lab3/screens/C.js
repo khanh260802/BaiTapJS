@@ -78,17 +78,17 @@ const styles = StyleSheet.create({
   },
   forgetPassword: {
     top: 113,
-    left: 15+102,
+    left: 102,
     fontSize: 60,
   },
   verification: {
     top: 245,
-    left: 15+28,
+    left: 28,
     fontSize: FontSize.size_xl,
   },
   login: {
     top: 471,
-    left: 15+10,
+    left: 10,
     backgroundColor: Color.colorGold,
     width: 339,
     height: 50,
@@ -96,31 +96,31 @@ const styles = StyleSheet.create({
   },
   next: {
     top: 486,
-    left: 15+124,
+    left: 124,
     fontSize: FontSize.size_lg,
   },
   enterOntimePassword: {
     top: 320,
-    left: 15+29,
+    left: 29,
     fontSize: FontSize.size_mini,
   },
   frameChild: {
-    left: 15+32,
+    left: 32,
   },
   frameItem: {
-    left: 15+132,
+    left: 132,
   },
   frameInner: {
-    left: 15+282,
+    left: 282,
   },
   rectangleView: {
-    left: 15+82,
+    left: 82,
   },
   frameChild1: {
-    left: 15+232,
+    left: 232,
   },
   frameChild2: {
-    left: 15+182,
+    left: 182,
   },
   a: {
     backgroundColor: "transparent",
