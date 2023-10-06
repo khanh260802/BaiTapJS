@@ -8,7 +8,6 @@ import {
 } from "react-native";
 import { CheckBox } from "react-native-elements";
 import { useState } from "react";
-import { FontSize } from "../GlobalStyles";
 const C = () => {
     const [passwordLenght, setPasswordLenght] = useState('');
     const [includeLowerCase, setIncludeLowerCase] = useState(false);

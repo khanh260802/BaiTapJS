@@ -1,17 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native-web';
 import TongHaiSo from './screens/TongHaiSo'
 import A from './screens/A';
 import B from './screens/B';
 import C from './screens/C';
-import { SafeAreaView } from 'react-native-web';
+import Tiki from './screens/Tiki';
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       {/* <TongHaiSo /> */}
       {/* <A /> */}
       {/* <B /> */}
-      <C />
+      {/* <C /> */}
+      <Tiki />
       <StatusBar style="auto" />
     </SafeAreaView>
   );
