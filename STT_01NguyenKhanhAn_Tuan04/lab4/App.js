@@ -11,9 +11,9 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       {/* <TongHaiSo /> */}
       {/* <A /> */}
-      {/* <B /> */}
+      <B />
       {/* <C /> */}
-      <Tiki />
+      {/* <Tiki /> */}
       <StatusBar style="auto" />
     </SafeAreaView>
   );

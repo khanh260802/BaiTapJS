@@ -12,6 +12,33 @@ import { LinearGradient } from "expo-linear-gradient";
 import { Color, FontFamily, FontSize, Border } from "../GlobalStyles";
 const B = () => {
     const [input, setInput] = useState("");
+    const [rate, setRate] = useState(0); 
+    const getComment = () => { 
+        if(rate == 0) 
+            return "Cùi thiệt sự !!!";
+        else if(rate == 1) 
+            return "Không ổn lắm !!!";
+        else if(rate == 2) 
+            return "Cũng tạm được";
+        else if(rate == 3) 
+            return "Quá oke !!!";
+        else if(rate == 4) 
+            return "Quá là tuyệt vời luôn !!!";
+    }
+    const Star = ({index, tintColor}) => {
+        return (
+            <TouchableOpacity 
+                key={index} 
+                onPress={()=>setRate(index)}
+            >
+                <Image
+                    style={styles.rete_star}
+                    source={require("../assets/star.png")}
+                    tintColor={tintColor}
+                />
+            </TouchableOpacity>
+        );
+    };
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -25,28 +52,14 @@ const B = () => {
                 </Text>
             </View>
             <View style={styles.section}>
-                <Text style={styles.section_text}> Cực kỳ hài lòng </Text>
+                <Text style={styles.section_text}> {getComment()} </Text>
                 <View style={styles.rate}>
-                    <Image
-                        style={styles.rete_star}
-                        source={require("../assets/star.png")}
-                    />
-                    <Image
-                        style={styles.rete_star}
-                        source={require("../assets/star.png")}
-                    />
-                    <Image
-                        style={styles.rete_star}
-                        source={require("../assets/star.png")}
-                    />
-                    <Image
-                        style={styles.rete_star}
-                        source={require("../assets/star.png")}
-                    />
-                    <Image
-                        style={styles.rete_star}
-                        source={require("../assets/star.png")}
-                    />
+                    {[...Array(5)].map((item, index) => (
+                        <Star 
+                            index={index} 
+                            tintColor= { index > rate && "gray"}
+                        />
+                    ))}
                 </View>
                 <TouchableOpacity style={styles.addImage}>
                     <Image
@@ -65,7 +78,7 @@ const B = () => {
                     onChangeText={(text) => setInput(text)}
                 />
 
-                <TouchableOpacity 
+                <TouchableOpacity
                     style={styles.button}
                     onPress={() => input && alert(`Đã gửi đánh giá: ${input}`)}
                 >
