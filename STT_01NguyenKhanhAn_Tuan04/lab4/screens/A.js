@@ -13,16 +13,6 @@ const A = () => {
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
 
-    const HandlePassword = (pw, showpw) => {
-        if (showpw) {
-            return pw;
-        } else {
-            return pw
-                .split("")
-                .map(() => "*")
-                .join('');
-        }
-    };
     return (
         <View style={styles.container}>
             <LinearGradient

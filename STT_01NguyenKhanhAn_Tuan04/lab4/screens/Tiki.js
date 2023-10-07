@@ -11,7 +11,6 @@ import { useState } from "react";
 
 const Tiki = () => {
     const [quantity, setQuantity] = useState(0); 
-    const [monney, setMoney] = useState(0); 
     console.log('re-render'); 
     return (
         <View style={styles.container}>
@@ -28,12 +27,9 @@ const Tiki = () => {
                         <View style={styles.header_right_bottom}>
                             <View style={styles.changeQuantity}>
                                 <TouchableOpacity style={[styles.button, {marginLeft: -3}]}
-                                    onPress={() => {
-                                        setQuantity(quantity-1);
-                                        setMoney((quantity-1)*141800);
-                                    }}
+                                    onPress={() =>setQuantity(quantity-1)}
                                     disabled={quantity <= 0}
-                                >
+                                > 
                                     <Image
                                         style={styles.buttonIcon}
                                         source={require("../assets/btnminus.png")}
@@ -41,10 +37,7 @@ const Tiki = () => {
                                 </TouchableOpacity>
                                 <Text style={styles.quantity}> {quantity} </Text>
                                 <TouchableOpacity style={styles.button}
-                                    onPress={() => {
-                                        setQuantity(quantity+1); 
-                                        setMoney((quantity+1)*141800);
-                                    }}
+                                    onPress={() => setQuantity(quantity+1)}
                                 >
                                     <Image
                                         style={styles.buttonIcon}
@@ -114,7 +107,7 @@ const Tiki = () => {
                                 fontWeight: 'bold',
                                 color: 'red'
                             }}
-                            > {monney} đ </Text>
+                            > {141800*quantity} đ </Text>
                         </View>
 
                     </View>
@@ -133,7 +126,7 @@ const Tiki = () => {
                             fontWeight: 'bold',
                             color: 'red'
                         }}
-                        > {monney} đ </Text>
+                        > {141800*quantity} đ </Text>
                     </View>
                     
                     <TouchableOpacity style={styles.button2}>

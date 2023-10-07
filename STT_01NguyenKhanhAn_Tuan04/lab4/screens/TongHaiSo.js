@@ -12,6 +12,7 @@ const TongHaiSo = () => {
     const [inputValue1, setInputValue1] = useState("");
     const [inputValue2, setInputValue2] = useState("");
     const [sum, setSum] = useState("");
+
     const MyButton = ({ onPress, title }) => {
         return (
             <TouchableOpacity style={styles.button} onPress={onPress}>
@@ -19,6 +20,7 @@ const TongHaiSo = () => {
             </TouchableOpacity>
         );
     };
+    
     return (
         <View style={styles.container}>
             <View style={styles.inputContaier}>
