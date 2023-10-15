@@ -1,7 +1,6 @@
 import React from "react";
 import { StyleSheet, Text, View, Button, Image, Pressable, SafeAreaView } from "react-native";
 const Screen_1 = ({navigation, route}) => {
-
     const phones = {
         vs_blue : require('../assets/vs_blue.png'),
         vs_red : require('../assets/vs_red.png'),
@@ -32,7 +31,7 @@ const Screen_1 = ({navigation, route}) => {
                     <Text style={styles.rate_text}>(Xem 828 đánh giá)</Text>
                 </View>
                 <View style={styles.price_wrap}> 
-                    <Text style={styles.price}>1.690.000 đ</Text>
+                    <Text style={styles.price}>1.790.000 đ</Text>
                     <Text style={styles.price_old}>1.990.000 đ</Text>            
                 </View>
                 <View style={styles.slogan}> 
@@ -75,19 +74,20 @@ const styles = StyleSheet.create({
     product_img :{
         width: 301,
         height: 361,
-        marginBottom: 20,
+        marginVertical: 20,
     },
 
     section: {
         flex: 1, 
         flexDirection: "column",
         marginHorizontal: 10,
+        justifyContent:'flex-start',
     },
 
     product_name :{
         fontSize: 18,
         fontWeight: 600,
-        textAlign: "center",
+        textAlign: "left",
         marginBottom: 10,
     },
 
@@ -188,6 +188,7 @@ const styles = StyleSheet.create({
         paddingVertical: 12,
         paddingHorizontal: 20,
         borderRadius: 10,
+        marginTop: 40, 
     },
 
     btn_buy_text :{
