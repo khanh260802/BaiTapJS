@@ -62,7 +62,7 @@ const Screen_1 = () => {
                 <View style={styles.item_right}>
                     <Text style={styles.item_product_name}>{item.product_name}</Text>
                     <Text style={styles.item_shop_name}>  
-                        <Text style={{color: '#999'}}>Shop </Text>
+                        <Text style={{color: '#999'}}>Shop</Text>
                         {item.shop_name}
                     </Text>
                 </View>
