@@ -1,5 +1,6 @@
 import React from "react";
-import { StyleSheet, Text, View, Button, Image, Pressable, SafeAreaView } from "react-native";
+import { StyleSheet, Text, View, Button, Image, Pressable, 
+    SafeAreaView } from "react-native";
 const Screen_1 = ({navigation, route}) => {
     const phones = {
         vs_blue : require('../assets/vs_blue.png'),
@@ -7,14 +8,12 @@ const Screen_1 = ({navigation, route}) => {
         vs_silver : require('../assets/vs_silver.png'),
         vs_black : require('../assets/vs_black.png'),
     }
-
     return (
         <SafeAreaView style={styles.container}>
             <Image
                 style={styles.product_img}
                 source={ phones[route.params.color] }
             />
-
             <View style={styles.section} >
                 <Text style={styles.product_name}>
                     Điện Thoại Vsmart Joy 3 - Hàng chính hãng
