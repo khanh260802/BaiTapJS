@@ -4,20 +4,33 @@ import { TextInput } from "react-native-web";
 
 const Screen3 = ({ navigation, route }) => {
     const jobInput = useRef(null);
-    const [job, setJob] = useState("");
+    const [job, setJob] = useState(route.params?.info.todoList.find((todo) => todo.id === route.params?.id)?.name || "");
     const info = route.params?.info;
-    
-    const onAdd = () => {
-        route.params.handleAdd({
-            ...info,
-            todoList: [
-                ...info.todoList,
-                { id: Math.random(), name: job, state: false, editable: false },
-            ],
-        });
-        setJob(""); 
+
+    useEffect(() => {
         jobInput.current.focus();
+    }, [job]);
+
+    const handleAdd = () => {
+        if( !route.params?.id ) {
+            route.params.onUpdateInfo({
+                ...info,
+                todoList: [
+                    ...info.todoList,
+                    { id: Math.random(), name: job, state: false, editable: false },
+                ],
+            });
+        } else {
+            route.params.onUpdateInfo({
+                ...info,
+                todoList: info.todoList.map((todo) =>
+                    todo.id === route.params?.id ? { ...todo, name: job } : todo
+                ),
+            });
+        }
+        navigation.goBack(); 
     }
+
     return (
         <View style={styles.container}>
             <View style={styles.header}>
@@ -56,7 +69,7 @@ const Screen3 = ({ navigation, route }) => {
                     ref={jobInput}
                 />
             </View>
-            <Pressable style={styles.btn} onPress={onAdd}>
+            <Pressable style={styles.btn} onPress={handleAdd}>
                 <Text style={styles.btntext}>FINISH</Text>
             </Pressable>
             <Image style={styles.img} source={require("../assets/bgr.png")} />

@@ -15,11 +15,29 @@ const Screen2 = ({ navigation, route }) => {
         fetch("https://65406abd45bedb25bfc1e202.mockapi.io/ArrayTodoList")
             .then((response) => response.json())
             .then((json) => {
-                setInfo({} && json.find((item) => item.email === email));
+                let infodata = json.find((item) => item.email === email);
+                if (infodata)
+                    setInfo(json.find((item) => item.email === email) || {});
+                else {
+                    fetch(
+                        "https://65406abd45bedb25bfc1e202.mockapi.io/ArrayTodoList",
+                        {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                                email,
+                                todoList: [],
+                            }),
+                        }
+                    )
+                        .then((response) => response.json())
+                        .then((json) => setInfo(json));
+                }
             });
     }, []);
 
-    
     useEffect(() => {
         if (info?.todoList) {
             fetch(
@@ -50,8 +68,16 @@ const Screen2 = ({ navigation, route }) => {
         });
     };
 
-    const handleAdd = (newInfo) => { setInfo(newInfo) }
+    const onUpdateInfo = (newInfo) => {
+        setInfo(newInfo);
+    };
 
+    const handleEdit = (id) => {
+        navigation.navigate({
+            name: "Screen3",
+            params: { info, onUpdateInfo, id },
+        });
+    };
     return (
         <View style={styles.ctn}>
             <View style={styles.inputwrap}>
@@ -77,18 +103,13 @@ const Screen2 = ({ navigation, route }) => {
                         </Pressable>
 
                         <TextInput
-                            style={[
-                                styles.todoname,
-                                todo.editable && styles.editing,
-                            ]}
+                            style={styles.todoname}
                             value={todo.name}
-                            editable={todo.editable}
-                            onChange={(e) => handleEdit(todo.id, e)}
-                            onKeyPress={(e) => handleKeyPress(todo.id, e)}
+                            readOnly
                         />
                         <Pressable
                             style={styles.btncheck}
-                            onPress={(e) => handleToggleEdit(todo.id)}
+                            onPress={() => handleEdit(todo.id)}
                         >
                             <Image
                                 style={styles.check}
@@ -112,7 +133,7 @@ const Screen2 = ({ navigation, route }) => {
                 onPress={() =>
                     navigation.navigate({
                         name: "Screen3",
-                        params: { info, handleAdd },
+                        params: { info, onUpdateInfo },
                     })
                 }
                 style={styles.btn}
