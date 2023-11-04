@@ -38,6 +38,7 @@ const Screen2 = ({ navigation, route }) => {
             });
     }, []);
 
+    // 
     useEffect(() => {
         if (info?.todoList) {
             fetch(
